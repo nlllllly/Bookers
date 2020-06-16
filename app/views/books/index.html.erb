@@ -1,6 +1,12 @@
 
 <h2>Books</h2>
-<%# <%= render 'books/show' %> %>
+<% @books.each do |book| %>
+    <%= book.title %>
+    <%= book.body %>
+    <%= link_to 'Show', book_path(book) %>
+    <%= link_to 'Edit', edit_book_path(book) %>
+    <%= link_to 'Destroy', books_path, method: :delete, confirm: 'Are you sure?' %>
+<% end %>
 
 
 <h2>New book</h2>

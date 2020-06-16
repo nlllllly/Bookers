@@ -1,2 +1,16 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<%# 成功したら %>
+Book was successfully created.
+
+
+<%# あとで段落なしにする %>
+<h4>Title:</h4>
+<p><%= @book.title %></p>
+
+<h4>Body:</h4>
+<p><%= @book.body %></p>
+
+
+<%# 編集とホームへ戻るリンクを %>
+Edit
+ | 
+ <%= link_to 'Back', books_path %>
