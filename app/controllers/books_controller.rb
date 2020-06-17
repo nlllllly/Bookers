@@ -12,10 +12,15 @@ class BooksController < ApplicationController
   def new
   end
 
+  # 空欄でなければ、そのまま登録して、空欄の場合には、error_messageを表示する
   def create
-    book = Book.new(book_params)
-    book.save
-    redirect_to book_path(book.id)
+    @book = Book.new(book_params)
+    if @book.save
+      redirect_to book_path(@book.id)
+    else
+      @books = Book.all
+      render action: :index
+    end
   end
 
   def edit
