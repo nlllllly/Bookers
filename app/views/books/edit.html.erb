@@ -1,13 +1,9 @@
 
 <h2>Editing Book</h2>
 
-<%= form_for(@book) do |f| %>
-    <h3>Title</h3>
-    <%= f.text_field :title %>
-    <h3>Body</h3>
-    <%= f.text_area :body %>
-    <%= f.submit %>
-<% end %>
+<%# _form.htmlの呼び出し %>
+<%= render 'layouts/form'%>
+
 
 <%# 編集とホームへ戻るリンクを %>
  <%= link_to 'Show', book_path(@book.id) %>
